@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Dependency directories (for yarn)
+.yarn/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS system files
+.DS_Store
+
+# IDE files (for example, VSCode)
+.vscode/
+
+# Environment files (for example, local dev environments)
+.env
+.env.local
+.env.*.local
+
+# Coverage reports
+coverage/
+
+# Jest test result files
+jest-coverage/
+
+# Next.js files (if part of the project)
+.next/
+
+# TypeScript build output (if you're using TypeScript)
+dist/
+
+# npm lock file, if you want to exclude it (optional)
+package-lock.json
+yarn.lock
+
+# MongoDB database files
+.mongod.log
+*.mongodb
+
+# Logs from Express or custom app logs
+logs/
+*.log
+
+# Node process runtime files (optional)
+*.pid
+*.seed
+
+# Temporary files
+*.tmp
+*.swp
