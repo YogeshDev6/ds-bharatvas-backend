@@ -3,8 +3,8 @@ const app = express();
 const connectDB = require('./db');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const cars = require('./routes/carRoutes');
 const applicants = require('./routes/applicantRoutes');
+const events = require('./routes/eventRoutes'); 
 
 // Initialize dotenv
 dotenv.config();
@@ -17,17 +17,16 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/api', cars);
 app.use('/api', applicants);
-
+app.use('/api', events); // NEW
 
 // Main route
 app.get('/', (req, res) => {
-  res.send("Spinny clone routeee");
+  res.send("Bharatvas routeee");
 }); 
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
