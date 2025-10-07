@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const applicants = require('./routes/applicantRoutes');
 const events = require('./routes/eventRoutes'); 
+const jobs = require('./routes/jobRoutes');
 
 // Initialize dotenv
 dotenv.config();
@@ -17,8 +18,9 @@ app.use(express.json());
 connectDB();
 
 // Routes
+app.use('/api', jobs);
 app.use('/api', applicants);
-app.use('/api', events); // NEW
+app.use('/api', events); 
 
 // Main route
 app.get('/', (req, res) => {
