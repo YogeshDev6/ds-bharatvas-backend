@@ -41,7 +41,11 @@ router.get("/applicants/:id", async (req, res) => {
 // POST a new applicant (apply for a job)
 router.post("/applicants", async (req, res) => {
   try {
-    const newApplicant = new Applicant(req.body);
+    const newApplicant = new Applicant({
+      ...req.body,
+      resumeLink: req.body.resumeLink || null, 
+    });
+
     await newApplicant.save();
     res.status(200).json({
       success: true,
