@@ -6,6 +6,7 @@ const cors = require('cors');
 const applicants = require('./routes/applicantRoutes');
 const events = require('./routes/eventRoutes'); 
 const jobs = require('./routes/jobRoutes');
+const products = require("./routes/productRoutes");
 
 // Initialize dotenv
 dotenv.config();
@@ -21,6 +22,7 @@ connectDB();
 app.use('/api', jobs);
 app.use('/api', applicants);
 app.use('/api', events); 
+app.use("/api", products);
 
 // Main route
 app.get('/', (req, res) => {
