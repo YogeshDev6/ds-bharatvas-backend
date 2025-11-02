@@ -3,10 +3,12 @@ const app = express();
 const connectDB = require('./db');
 const dotenv = require('dotenv');
 const cors = require('cors');
+
 const applicants = require('./routes/applicantRoutes');
 const events = require('./routes/eventRoutes'); 
 const jobs = require('./routes/jobRoutes');
 const products = require("./routes/productRoutes");
+const blogs = require("./routes/blogRoutes");
 
 // Initialize dotenv
 dotenv.config();
@@ -23,6 +25,7 @@ app.use('/api', jobs);
 app.use('/api', applicants);
 app.use('/api', events); 
 app.use("/api", products);
+app.use("/api", blogs);
 
 // Main route
 app.get('/', (req, res) => {
@@ -33,4 +36,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
